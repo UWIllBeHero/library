@@ -14,7 +14,7 @@
                         <img src="{{URL::asset('img/slide-1.jpg')}}">
                         <div class="carousel-caption">
                             <h3>{{$anniversary->preview}}</h3>
-                            <p>
+                            <p style="color: white;">
                                 @foreach($articles as $article)
                                     @if($article->id == $anniversary->articles_id)
                                         {{$article->header}}
