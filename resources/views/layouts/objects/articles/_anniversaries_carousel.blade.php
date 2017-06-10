@@ -9,7 +9,7 @@
     <!-- Wrapper for slides -->
 <div class="carousel-inner" style="margin-top: 5px;">
     @foreach($anniversaries as $anniversary)
-            <div class="item {{ $anniversary->id == 1 ? 'active' : '' }}">
+            <div class="item {{ $anniversary == $anniversary->first() ? 'active' : '' }}">
                 <div class="row">
                         <img src="{{URL::asset('img/slide-1.jpg')}}">
                         <div class="carousel-caption">
