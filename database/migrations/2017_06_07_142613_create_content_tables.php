@@ -20,13 +20,9 @@ class CreateContentTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('articles_id')->unsigned()->nullable();
-            $table->foreign('articles_id')->references('id')
+            $table->integer('article_id')->unsigned()->nullable();
+            $table->foreign('article_id')->references('id')
                 ->on('articles')->onDelete('cascade');
-            //
-            $table->integer('gallery_id')->unsigned()->nullable();
-            $table->foreign('gallery_id')->references('id')
-                ->on('galleries')->onDelete('cascade');
             //
             $table->integer('anniversary_id')->unsigned()->nullable();
             $table->foreign('anniversary_id')->references('id')
@@ -39,13 +35,9 @@ class CreateContentTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('articles_id')->unsigned()->nullable();
-            $table->foreign('articles_id')->references('id')
+            $table->integer('article_id')->unsigned()->nullable();
+            $table->foreign('article_id')->references('id')
                 ->on('articles')->onDelete('cascade');
-            //
-            $table->integer('gallery_id')->unsigned()->nullable();
-            $table->foreign('gallery_id')->references('id')
-                ->on('galleries')->onDelete('cascade');
             //
             $table->integer('anniversary_id')->unsigned()->nullable();
             $table->foreign('anniversary_id')->references('id')

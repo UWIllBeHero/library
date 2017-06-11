@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     //
-    public function gallery(){
-        return $this->belongsTo(Gallery::class);
-    }
-    //
     public function anniversary(){
         return $this->belongsTo(Anniversary::class);
     }
@@ -20,7 +16,7 @@ class Photo extends Model
     }
     //
     public function tags(){
-        return $this->hasMany(Tag::class);
+        return $this->belongsToMany(Tag::class);
     }
     //
 }

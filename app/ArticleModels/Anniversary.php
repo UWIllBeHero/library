@@ -8,11 +8,11 @@ class Anniversary extends Model
 {
     //
     public function photos(){
-        return $this->hasMany('App/ArticleModels/Photo');
+        return $this->hasMany(Photo::class);
     }
     //
     public function videos(){
-        return $this->hasMany('App/ArticleModels/Video');
+        return $this->hasMany(Video::class);
     }
     //
     public function tags(){

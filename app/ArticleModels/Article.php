@@ -8,15 +8,20 @@ class Article extends Model
 {
     //
     public function photos(){
-        return $this->hasMany('App/ArticleModels/Photos');
+        return $this->hasMany(Photo::class);
     }
     //
     public function videos(){
-        return $this->hasMany('App/ArticleModels/Videos');
+        return $this->hasMany(Video::class);
     }
     //
     public function tags(){
         return $this->belongsToMany(Tag::class);
+    }
+    //
+    //
+    public function books(){
+        return $this->belongsToMany(Book::class);
     }
     //
 

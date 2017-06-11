@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatalogTables extends Migration
+class CreateBooksTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCatalogTables extends Migration
      */
     public function up()
     {
-        Schema::create('catalogs', function (Blueprint $table){
+        Schema::create('books', function (Blueprint $table){
             //
             $table->increments('id');
             $table->text('name');
@@ -32,9 +32,9 @@ class CreateCatalogTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('catalog_id')->unsigned();
-            $table->foreign('catalog_id')->references('id')
-                ->on('catalogs')->onDelete('cascade');
+            $table->integer('book_id')->unsigned();
+            $table->foreign('book_id')->references('id')
+                ->on('books')->onDelete('cascade');
         });
 
         Schema::create('editions', function (Blueprint $table){
@@ -43,9 +43,9 @@ class CreateCatalogTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('catalog_id')->unsigned();
-            $table->foreign('catalog_id')->references('id')
-                ->on('catalogs')->onDelete('cascade');
+            $table->integer('book_id')->unsigned();
+            $table->foreign('book_id')->references('id')
+                ->on('books')->onDelete('cascade');
         });
 
         Schema::create('languages', function (Blueprint $table){
@@ -54,9 +54,9 @@ class CreateCatalogTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('catalog_id')->unsigned();
-            $table->foreign('catalog_id')->references('id')
-                ->on('catalogs')->onDelete('cascade');
+            $table->integer('book_id')->unsigned();
+            $table->foreign('book_id')->references('id')
+                ->on('books')->onDelete('cascade');
         });
 
         Schema::create('genres', function (Blueprint $table){
@@ -65,20 +65,9 @@ class CreateCatalogTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('catalog_id')->unsigned();
-            $table->foreign('catalog_id')->references('id')
-                ->on('catalogs')->onDelete('cascade');
-        });
-
-        Schema::create('book_tags', function (Blueprint $table){
-            //
-            $table->increments('id');
-            $table->string('value');
-            $table->timestamps();
-            //
-            $table->integer('catalog_id')->unsigned();
-            $table->foreign('catalog_id')->references('id')
-                ->on('catalogs')->onDelete('cascade');
+            $table->integer('book_id')->unsigned();
+            $table->foreign('book_id')->references('id')
+                ->on('books')->onDelete('cascade');
         });
     }
 
@@ -91,11 +80,9 @@ class CreateCatalogTables extends Migration
     {
 
         Schema::dropIfExists('authors');
-        Schema::dropIfExists('catalogs');
         Schema::dropIfExists('editions');
         Schema::dropIfExists('languages');
         Schema::dropIfExists('genres');
-        Schema::dropIfExists('book_tags');
 
     }
 }

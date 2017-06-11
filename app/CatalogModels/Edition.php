@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Edition extends Model
 {
     //
-    public function catalogs(){
-        return $this->hasMany(Catalog::class);
+    public function books(){
+        return $this->hasMany(Book::class);
     }
     //
     public function tags(){

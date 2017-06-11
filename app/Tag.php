@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     //
-    public function galleries(){
-        return $this->belongsToMany(Gallery::class);
-    }
-    //
     public function anniversaries(){
         return $this->belongsToMany(Anniversary::class);
     }
@@ -20,11 +16,11 @@ class Tag extends Model
     }
     //
     public function photos(){
-        return $this->belongsToMany('App/ArticleModels/Photo');
+        return $this->belongsToMany(Photo::class);
     }
     //
     public function videos(){
-        return $this->belongsToMany('App/ArticleModels/Video');
+        return $this->belongsToMany(Video::class);
     }
     //
     public function authors(){
@@ -36,7 +32,7 @@ class Tag extends Model
     }
     //
     public function catalogs(){
-        return $this->belongsToMany('App/CatalogModels/Catalog');
+        return $this->belongsToMany(Book::class);
     }
     //
     public function editions(){

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Anniversary;
-use App\Catalog;
+use App\Book;
 use Illuminate\Http\Request;
 use \App\Article;
 use Illuminate\Support\Facades\DB;

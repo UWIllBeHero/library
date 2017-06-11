@@ -24,13 +24,9 @@ class CreateTagsTable extends Migration
             $table->foreign('articles_id')->references('id')
                 ->on('articles')->onDelete('cascade');
             //
-            $table->integer('catalog_id')->unsigned()->nullable()->index();
-            $table->foreign('catalog_id')->references('id')
-                ->on('catalogs')->onDelete('cascade');
-            //
-            $table->integer('gallery_id')->unsigned()->nullable();
-            $table->foreign('gallery_id')->references('id')
-                ->on('galleries')->onDelete('cascade');
+            $table->integer('book_id')->unsigned()->nullable()->index();
+            $table->foreign('book_id')->references('id')
+                ->on('books')->onDelete('cascade');
             //
             $table->integer('anniversary_id')->unsigned()->nullable();
             $table->foreign('anniversary_id')->references('id')

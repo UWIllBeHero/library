@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Genre extends Model
 {
     //
-    public function catalogs(){
+    public function books(){
         return $this->belongsToMany('App\CatalogModels\Catalog');
     }
     //

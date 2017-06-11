@@ -24,17 +24,6 @@ class CreateArticleTables extends Migration
 
         });
         //
-        Schema::create('galleries', function (Blueprint $table){
-            $table->increments('id');
-            $table->string('name')->unique();
-            //
-            $table->integer('article_id')->unsigned()->nullable();
-            $table->foreign('article_id')->references('id')
-                ->on('articles')->onDelete('cascade');
-            //
-            $table->timestamps();
-        });
-        //
         Schema::create('anniversaries', function (Blueprint $table){
             $table->increments('id');
             $table->date('anniversary');

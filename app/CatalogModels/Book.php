@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Catalog extends Model
+class Book extends Model
 {
     public function authors(){
         return $this->belongsToMany(Author::class);
@@ -23,11 +23,12 @@ class Catalog extends Model
     }
     //
     public function articles(){
-        return $this->hasMany(Article::class);
+        return $this->belongsToMany(Article::class);
     }
     //
     public function tags(){
-        return $this->hasMany(Tag::class);
+        return $this->belongsToMany(Tag::class);
     }
     //
+
 }
