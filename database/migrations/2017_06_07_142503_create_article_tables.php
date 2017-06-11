@@ -17,27 +17,29 @@ class CreateArticleTables extends Migration
         Schema::create('articles', function (Blueprint $table){
             $table->increments('id');
             $table->string('header');
-            $table->timestamp('publication_date');
+            $table->timestamps();
             $table->dateTime('event_date')->nullable();
             $table->text('preview');
             $table->longText('main_text');
 
         });
         //
-        Schema::create('gallery', function (Blueprint $table){
+        Schema::create('galleries', function (Blueprint $table){
             $table->increments('id');
-            $table->timestamp('publication_date');
             $table->string('name')->unique();
             //
             $table->integer('article_id')->unsigned()->nullable();
             $table->foreign('article_id')->references('id')
                 ->on('articles')->onDelete('cascade');
+            //
+            $table->timestamps();
         });
         //
         Schema::create('anniversaries', function (Blueprint $table){
             $table->increments('id');
             $table->date('anniversary');
             $table->text('preview');
+            $table->timestamps();
             //
             $table->integer('articles_id')->unsigned()->nullable();
             $table->foreign('articles_id')->references('id')
@@ -52,8 +54,12 @@ class CreateArticleTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anniversaries');
-        Schema::dropIfExists('gallery');
+        Schema::dropIfExists('article_tag');
+        Schema::dropIfExists('anniversary_tag');
+        Schema::dropIfExists('tags');
         Schema::dropIfExists('articles');
+        Schema::dropIfExists('authors');
+        Schema::dropIfExists('anniversaries');
+        Schema::dropIfExists('galleries');
     }
 }

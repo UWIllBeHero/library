@@ -7,44 +7,45 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     //
-    public function gallery(){
-        return $this->belongsToMany('App/ArticleModels/Gallery');
+    public function galleries(){
+        return $this->belongsToMany(Gallery::class);
     }
     //
-    public function anniversary(){
-        return $this->belongsToMany('App/ArticleModels/Anniversary');
+    public function anniversaries(){
+        return $this->belongsToMany(Anniversary::class);
     }
     //
-    public function article(){
-        return $this->belongsToMany('App/ArticleModels/Article');
+    public function articles(){
+        return $this->belongsToMany(Article::class);
     }
     //
-    public function photo(){
+    public function photos(){
         return $this->belongsToMany('App/ArticleModels/Photo');
     }
     //
-    public function video(){
+    public function videos(){
         return $this->belongsToMany('App/ArticleModels/Video');
     }
     //
-    public function author(){
+    public function authors(){
         return $this->belongsToMany('App/CatalogModels/Author');
     }
     //
-    public function genre(){
+    public function genres(){
         return $this->belongsToMany('App/CatalogModels/Genre');
     }
     //
-    public function catalog(){
+    public function catalogs(){
         return $this->belongsToMany('App/CatalogModels/Catalog');
     }
     //
-    public function edition(){
+    public function editions(){
         return $this->belongsToMany('App/CatalogModels/Edition');
     }
     //
-    public function language(){
+    public function languages(){
         return $this->belongsToMany('App/CatalogModels/Language');
     }
     //
+
 }

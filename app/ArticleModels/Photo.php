@@ -8,19 +8,19 @@ class Photo extends Model
 {
     //
     public function gallery(){
-        return $this->belongsToMany('App/ArticleModels/Gallery');
+        return $this->belongsTo(Gallery::class);
     }
     //
     public function anniversary(){
-        return $this->belongsToMany('App/ArticleModels/Anniversary');
+        return $this->belongsTo(Anniversary::class);
     }
     //
     public function article(){
-        return $this->belongsToMany('App/ArticleModels/Article');
+        return $this->belongsTo(Article::class);
     }
     //
     public function tags(){
-        return $this->hasMany('App/Tag');
+        return $this->hasMany(Tag::class);
     }
     //
 }

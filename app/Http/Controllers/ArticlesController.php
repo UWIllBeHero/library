@@ -12,7 +12,8 @@ class ArticlesController extends Controller
 {
     //
     public function index(){
-        $articles = Article::all();
+        $articles = Article::paginate(10);
+        $articles->withPath('/');
         $anniversaries = Anniversary::all()->sortBy('anniversary')->chunk(3);
         $anniversaries = $anniversaries->first();
         return view('index', compact('articles'), compact('anniversaries'));

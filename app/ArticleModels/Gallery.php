@@ -16,7 +16,7 @@ class Gallery extends Model
     }
     //
     public function tags(){
-        return $this->hasMany('App/Tag');
+        return $this->belongsToMany(Tag::class);
     }
     //
 }
