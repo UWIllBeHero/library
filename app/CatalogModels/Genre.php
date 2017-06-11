@@ -8,11 +8,7 @@ class Genre extends Model
 {
     //
     public function books(){
-        return $this->belongsToMany('App\CatalogModels\Catalog');
-    }
-    //
-    public function tags(){
-        return $this->hasMany('App/Tag');
+        return $this->belongsToMany(Book::class);
     }
     //
 }

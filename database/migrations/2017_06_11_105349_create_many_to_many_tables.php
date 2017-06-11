@@ -67,6 +67,42 @@ class CreateManyToManyTables extends Migration
                 ->references('id')->on('videos')->onDelete('cascade');
         });
         //
+        Schema::create('book_author', function (Blueprint $table){
+            $table->integer('book_id')->unsigned()->nullable();
+            $table->foreign('book_id')
+                ->references('id')->on('books')->onDelete('cascade');
+            $table->integer('author_id')->unsigned()->nullable();
+            $table->foreign('author_id')
+                ->references('id')->on('authors')->onDelete('cascade');
+        });
+        //
+        Schema::create('book_edition', function (Blueprint $table){
+            $table->integer('book_id')->unsigned()->nullable();
+            $table->foreign('book_id')
+                ->references('id')->on('books')->onDelete('cascade');
+            $table->integer('edition_id')->unsigned()->nullable();
+            $table->foreign('edition_id')
+                ->references('id')->on('editions')->onDelete('cascade');
+        });
+        //
+        Schema::create('book_language', function (Blueprint $table){
+            $table->integer('book_id')->unsigned()->nullable();
+            $table->foreign('book_id')
+                ->references('id')->on('books')->onDelete('cascade');
+            $table->integer('language_id')->unsigned()->nullable();
+            $table->foreign('language_id')
+                ->references('id')->on('languages')->onDelete('cascade');
+        });
+        //
+        Schema::create('book_genre', function (Blueprint $table){
+            $table->integer('book_id')->unsigned()->nullable();
+            $table->foreign('book_id')
+                ->references('id')->on('books')->onDelete('cascade');
+            $table->integer('genre_id')->unsigned()->nullable();
+            $table->foreign('genre_id')
+                ->references('id')->on('genres')->onDelete('cascade');
+        });
+        //
     }
 
     /**

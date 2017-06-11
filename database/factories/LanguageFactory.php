@@ -7,6 +7,6 @@
  */
 $factory->define(\App\Article::class, function (\Faker\Generator $faker){
     return [
-        'value'=>$faker->text(125),
+        'value'=>$faker->languageCode,
         ];
 });

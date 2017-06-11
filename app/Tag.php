@@ -23,25 +23,8 @@ class Tag extends Model
         return $this->belongsToMany(Video::class);
     }
     //
-    public function authors(){
-        return $this->belongsToMany('App/CatalogModels/Author');
-    }
-    //
-    public function genres(){
-        return $this->belongsToMany('App/CatalogModels/Genre');
-    }
-    //
-    public function catalogs(){
+    public function books(){
         return $this->belongsToMany(Book::class);
     }
     //
-    public function editions(){
-        return $this->belongsToMany('App/CatalogModels/Edition');
-    }
-    //
-    public function languages(){
-        return $this->belongsToMany('App/CatalogModels/Language');
-    }
-    //
-
 }

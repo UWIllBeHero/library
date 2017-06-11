@@ -11,8 +11,4 @@ class Author extends Model
       return $this->belongsToMany(Book::class);
     }
     //
-    public function tags(){
-        return $this->hasMany('App/Tag');
-    }
-    //
 }

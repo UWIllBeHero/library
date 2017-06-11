@@ -11,15 +11,15 @@ class Book extends Model
     }
     //
     public function edition(){
-        return $this->belongsTo(Edition::class);
+        return $this->belongsToMany(Edition::class);
     }
     //
     public function languages(){
-        return $this->hasMany(Language::class);
+        return $this->belongsToMany(Language::class);
     }
     //
     public function genres(){
-        return $this->hasMany(Genre::class);
+        return $this->belongsToMany(Genre::class);
     }
     //
     public function articles(){
