@@ -16,16 +16,14 @@ class BookSeeder extends Seeder
         //
         $tags = \App\Tag::all();
         $articles = \App\Article::all();
-
-        factory(\App\Book::class, 30)->create()->each(/**
+        //
+        factory(\App\Book::class, 100)->create()->each(/**
          * @param $article
          */
             function ($book) use ($tags, $articles) {
                 $book->tags()->attach(\App\Tag::find($tags[ rand(0, 4)]));
                 $book->tags()->attach(\App\Tag::find($tags[ rand(0, 10)]));
                 $book->tags()->attach(\App\Tag::find($tags[ rand(0, 19)]));
-                //
-                $book->articles()->attach(\App\Article::find($articles[rand(0,count($articles)-1)]));
             });
         //
 

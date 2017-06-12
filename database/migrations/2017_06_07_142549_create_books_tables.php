@@ -32,7 +32,7 @@ class CreateBooksTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('book_id')->unsigned();
+            $table->integer('book_id')->unsigned()->nullable();
             $table->foreign('book_id')->references('id')
                 ->on('books')->onDelete('cascade');
         });
@@ -43,7 +43,7 @@ class CreateBooksTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('book_id')->unsigned();
+            $table->integer('book_id')->unsigned()->nullable();
             $table->foreign('book_id')->references('id')
                 ->on('books')->onDelete('cascade');
         });
@@ -54,7 +54,7 @@ class CreateBooksTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('book_id')->unsigned();
+            $table->integer('book_id')->unsigned()->nullable();
             $table->foreign('book_id')->references('id')
                 ->on('books')->onDelete('cascade');
         });
@@ -65,7 +65,7 @@ class CreateBooksTables extends Migration
             $table->string('value');
             $table->timestamps();
             //
-            $table->integer('book_id')->unsigned();
+            $table->integer('book_id')->unsigned()->nullable();
             $table->foreign('book_id')->references('id')
                 ->on('books')->onDelete('cascade');
         });

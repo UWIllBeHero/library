@@ -17,7 +17,11 @@ class DatabaseSeeder extends Seeder
        $this->call(ArticleSeeder::class);
        $this->call(AnniversarySeeder::class);
        $this->call(BookSeeder::class);
-        $this->call(PhotoSeeder::class);
-        $this->call(VideoSeeder::class);
+       $this->call(PhotoSeeder::class);
+       $this->call(VideoSeeder::class);
+       $this->call(AuthorSeeder::class);
+       $this->call(EditionSeeder::class);
+       $this->call(LangugeSeeder::class);
+       $this->call(GenreSeeder::class);
     }
 }

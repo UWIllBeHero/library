@@ -67,7 +67,7 @@ class CreateManyToManyTables extends Migration
                 ->references('id')->on('videos')->onDelete('cascade');
         });
         //
-        Schema::create('book_author', function (Blueprint $table){
+        Schema::create('author_book', function (Blueprint $table){
             $table->integer('book_id')->unsigned()->nullable();
             $table->foreign('book_id')
                 ->references('id')->on('books')->onDelete('cascade');
