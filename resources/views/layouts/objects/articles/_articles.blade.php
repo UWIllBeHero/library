@@ -4,7 +4,7 @@
             <h2>
                {{$article->header}}
             </h2>
-            <small>Опубліковано: {{$article->publication_date}}</small>
+            <small>Опубліковано: {{$article->updated_at}}</small>
             <hr>
                 <img class="img-responsive img-hover" id="img-center" src="http://placehold.it/900x300" alt="">
             <hr>
@@ -14,4 +14,5 @@
         </div>
         <hr>
 @endforeach
+    {{$articles->links()}}
 </div>

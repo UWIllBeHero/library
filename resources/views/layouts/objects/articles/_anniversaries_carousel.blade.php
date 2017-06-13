@@ -14,14 +14,15 @@
                         <img src="{{URL::asset('img/slide-1.jpg')}}">
                         <div class="carousel-caption">
                             <h3>{{$anniversary->preview}}</h3>
-                            <p style="color: white;">
+                            <p style="color: white;">{{$anniversary->anniversary}}</p>
                                 @foreach($articles as $article)
                                     @if($article->id == $anniversary->articles_id)
+                                    <p style="color: white;">
                                         {{$article->header}}
-                                    @endif
-                                    @endforeach
-                            </p>
-                            <a class="btn" href="/{{$anniversary->articles_id}}">Дізнатись більше</a>
+                                    </p>
+                                    <a class="btn" href="/{{$article->id}}">Дізнатись більше</a>
+                                @endif
+                                @endforeach
                         </div>
                 </div>
             </div>

@@ -51,6 +51,8 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 
+<script src="{{ URL::asset('js/library_custom.js') }}"></script>
+
 <script>
     $('#AnniversariesCarousel').carousel({
         interval: 9000 //changes the speed
