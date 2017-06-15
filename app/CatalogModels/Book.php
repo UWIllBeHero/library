@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * App\Book
@@ -32,7 +33,10 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {   //
     public static function get_fresh_books(){
-        return null;
+        return Book::with(['tags' => function ($query) {
+            $query->where('value', 'like', '%fresh%');
+
+        }])->get()->load('authors');
     }
     //
     public function authors(){

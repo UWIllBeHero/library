@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.25 on 2017-06-07.
+ * Generated for Laravel 5.4.25 on 2017-06-15.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13605,21 +13605,3 @@ namespace {
     
 }
 
-namespace Illuminate\Support{
-    /**
-     * @method Fluent first()
-     * @method Fluent after($column)
-     * @method Fluent change()
-     * @method Fluent nullable()
-     * @method Fluent unsigned()
-     * @method Fluent unique()
-     * @method Fluent index()
-     * @method Fluent primary()
-     * @method Fluent default($value)
-     * @method Fluent onUpdate($value)
-     * @method Fluent onDelete($value)
-     * @method Fluent references($value)
-     * @method Fluent on($value)
-     */
-    class Fluent {}
-}

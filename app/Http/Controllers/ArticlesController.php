@@ -16,7 +16,11 @@ class ArticlesController extends Controller
         $articles->withPath('/');
         $anniversaries = Anniversary::all()->chunk(3)->sortByDesc('anniversary');
         $anniversaries = $anniversaries->first();
-        return view('index', compact('articles'), compact('anniversaries'));
+        $books = Book::get_fresh_books();
+        return view('index')
+            ->with('articles', $articles)
+            ->with('anniversaries', $anniversaries)
+            ->with('books', $books);
     }
     //
     public function single_article(Article $article){
