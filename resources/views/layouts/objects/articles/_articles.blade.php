@@ -9,7 +9,7 @@
                 <img class="img-responsive img-hover" id="img-center" src="http://placehold.it/900x300" alt="">
             <hr>
             <p>{{$article->preview}}</p>
-            <a class="btn btn-primary" href="/{{$article->id}}">Читати далі...<i class="fa fa-angle-right"></i></a>
+            <a class="btn btn-primary" href="/articles/{{$article->id}}">Читати далі...<i class="fa fa-angle-right"></i></a>
             <hr>
         </div>
         <hr>

@@ -12,7 +12,7 @@ class ArticlesController extends Controller
 {
     //
     public function index(){
-        $articles = Article::paginate(10);
+        $articles = Article::paginate(5);
         $articles->withPath('/');
         $anniversaries = Anniversary::all()->chunk(3)->sortByDesc('anniversary');
         $anniversaries = $anniversaries->first();
@@ -25,6 +25,8 @@ class ArticlesController extends Controller
     //
     public function single_article(Article $article){
 
-        return view('article', compact('article'));
+        return view('article')
+            ->with('article', $article)
+            ->with('books', Book::get_fresh_books());
     }
 }

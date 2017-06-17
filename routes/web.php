@@ -15,7 +15,7 @@
 //
 Route::get('/','ArticlesController@index');
 //
-Route::get('/{article}','ArticlesController@single_article');
+Route::get('/articles/{article}','ArticlesController@single_article');
 //
 Route::get('/about_us', function (){
     return view('about_us');
@@ -34,6 +34,6 @@ Route::get('/anniversaries', function (){
 });
 //
 Route::get('/admin', function (){
-    return view('admin_layouts.ad_min');
+    return view('admin_layouts.ad_min_index');
 });
 //

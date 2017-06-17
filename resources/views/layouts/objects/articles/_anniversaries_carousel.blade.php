@@ -20,7 +20,7 @@
                                     <p style="color: white;">
                                         {{$article->header}}
                                     </p>
-                                    <a class="btn" href="/{{$article->id}}">Дізнатись більше</a>
+                                    <a class="btn" href="/articles/{{$article->id}}">Дізнатись більше</a>
                                 @endif
                                 @endforeach
                         </div>
