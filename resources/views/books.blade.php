@@ -35,7 +35,7 @@
 
 @include('layouts.partials._header')
 
-@include('layouts.partials._body')
+@include('layouts.bodies._books_body')
 
 @include('layouts.partials._footer')
 

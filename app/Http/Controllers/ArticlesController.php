@@ -14,8 +14,7 @@ class ArticlesController extends Controller
     public function index(){
         $articles = Article::paginate(5);
         $articles->withPath('/');
-        $anniversaries = Anniversary::all()->chunk(3)->sortByDesc('anniversary');
-        $anniversaries = $anniversaries->first();
+        $anniversaries = Anniversary::all()->sortByDesc('anniversary');
         $books = Book::get_fresh_books();
         return view('index')
             ->with('articles', $articles)

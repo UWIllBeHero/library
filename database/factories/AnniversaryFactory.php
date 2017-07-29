@@ -8,6 +8,7 @@
 $factory->define(\App\Anniversary::class, function (\Faker\Generator $faker){
     return [
         'preview'=>$faker->text(200),
-        'anniversary'=>$faker->date()
+        'anniversary'=>$faker->date(),
+        'url'=>''
     ];
 });

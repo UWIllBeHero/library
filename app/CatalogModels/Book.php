@@ -39,6 +39,11 @@ class Book extends Model
         }])->get()->load('authors');
     }
     //
+    //
+/*    public static function get_all_books(){
+        return Book::all()->paginate(20);
+    }*/
+    //
     public function authors(){
         return $this->belongsToMany(Author::class);
     }

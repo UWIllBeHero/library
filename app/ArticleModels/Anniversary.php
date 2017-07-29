@@ -2,7 +2,9 @@
 
 namespace App;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
+use MaddHatter\LaravelFullcalendar\IdentifiableEvent;
 
 /**
  * App\Anniversary
@@ -23,9 +25,16 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Anniversary wherePreview($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Anniversary whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $url
+ * @method static \Illuminate\Database\Query\Builder|\App\Anniversary whereUrl($value)
+ * @property-read \App\Article $article
  */
-class Anniversary extends Model
+class Anniversary extends Model implements \MaddHatter\LaravelFullcalendar\Event
 {
+    //
+    public function article(){
+        return $this->BelongsTo(Article::class);
+    }
     //
     public function photos(){
         return $this->hasMany(Photo::class);
@@ -39,4 +48,54 @@ class Anniversary extends Model
         return $this->belongsToMany(Tag::class);
     }
     //
+    protected $dates = ['anniversary', 'anniversary'];
+
+    /**
+     * Get the event's id number
+     *
+     * @return int
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Get the event's title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->preview;
+    }
+
+    /**
+     * Is it an all day event?
+     *
+     * @return bool
+     */
+    public function isAllDay()
+    {
+        return true;
+    }
+
+    /**
+     * Get the start time
+     *
+     * @return DateTime|string
+     */
+    public function getStart()
+    {
+        return $this->anniversary;
+    }
+
+    /**
+     * Get the end time
+     *
+     * @return DateTime|string
+     */
+    public function getEnd()
+    {
+        return $this->anniversary;
+    }
 }

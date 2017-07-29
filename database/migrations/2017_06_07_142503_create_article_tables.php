@@ -28,6 +28,7 @@ class CreateArticleTables extends Migration
             $table->increments('id');
             $table->date('anniversary');
             $table->text('preview');
+            $table->text('url')->nullable();
             $table->timestamps();
             //
             $table->integer('articles_id')->unsigned()->nullable();

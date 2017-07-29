@@ -15,14 +15,14 @@
                         <div class="carousel-caption">
                             <h3>{{$anniversary->preview}}</h3>
                             <p style="color: white;">{{$anniversary->anniversary}}</p>
-                                @foreach($articles as $article)
-                                    @if($article->id == $anniversary->articles_id)
+                                {{--@foreach($articles as $article)
+                                    @if($article->id == $anniversary->articles_id)--}}
                                     <p style="color: white;">
-                                        {{$article->header}}
+                                        {{--{{$anniversary->article()->header}}--}}
                                     </p>
-                                    <a class="btn" href="/articles/{{$article->id}}">Дізнатись більше</a>
-                                @endif
-                                @endforeach
+                                    <a class="btn" href="/articles/{{$anniversary->article}}">Дізнатись більше</a>
+                                {{--@endif
+                                @endforeach--}}
                         </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.25 on 2017-06-15.
+ * Generated for Laravel 5.4.25 on 2017-06-18.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11553,6 +11553,218 @@ namespace Illuminate\Support\Facades {
     }         
 }
     
+namespace Intervention\Image\Facades {
+
+    class Image {
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @static 
+         */
+        public static function configure($config = array())
+        {
+            return \Intervention\Image\ImageManager::configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function make($data)
+        {
+            return \Intervention\Image\ImageManager::make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param integer $width
+         * @param integer $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function canvas($width, $height, $background = null)
+        {
+            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param integer $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
+        }
+        
+    }         
+}
+    
+namespace MaddHatter\LaravelFullcalendar\Facades {
+
+    class Calendar {
+        
+        /**
+         * Create an event DTO to add to a calendar
+         *
+         * @param string $title
+         * @param string $isAllDay
+         * @param string|\DateTime $start If string, must be valid datetime format: http://bit.ly/1z7QWbg
+         * @param string|\DateTime $end If string, must be valid datetime format: http://bit.ly/1z7QWbg
+         * @param string $id event Id
+         * @param array $options
+         * @return \MaddHatter\LaravelFullcalendar\SimpleEvent 
+         * @static 
+         */
+        public static function event($title, $isAllDay, $start, $end, $id = null, $options = array())
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::event($title, $isAllDay, $start, $end, $id, $options);
+        }
+        
+        /**
+         * Create the <div> the calendar will be rendered into
+         *
+         * @return string 
+         * @static 
+         */
+        public static function calendar()
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::calendar();
+        }
+        
+        /**
+         * Get the <script> block to render the calendar (as a View)
+         *
+         * @return \Illuminate\View\View 
+         * @static 
+         */
+        public static function script()
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::script();
+        }
+        
+        /**
+         * Customize the ID of the generated <div>
+         *
+         * @param string $id
+         * @return $this 
+         * @static 
+         */
+        public static function setId($id)
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::setId($id);
+        }
+        
+        /**
+         * Get the ID of the generated <div>
+         * This value is randomized unless a custom value was set via setId
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getId()
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::getId();
+        }
+        
+        /**
+         * Add an event
+         *
+         * @param \Event $event
+         * @param array $customAttributes
+         * @return $this 
+         * @static 
+         */
+        public static function addEvent($event, $customAttributes = array())
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::addEvent($event, $customAttributes);
+        }
+        
+        /**
+         * Add multiple events
+         *
+         * @param array|\MaddHatter\LaravelFullcalendar\ArrayAccess $events
+         * @param array $customAttributes
+         * @return $this 
+         * @static 
+         */
+        public static function addEvents($events, $customAttributes = array())
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::addEvents($events, $customAttributes);
+        }
+        
+        /**
+         * Set fullcalendar options
+         *
+         * @param array $options
+         * @return $this 
+         * @static 
+         */
+        public static function setOptions($options)
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::setOptions($options);
+        }
+        
+        /**
+         * Get the fullcalendar options (not including the events list)
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getOptions()
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::getOptions();
+        }
+        
+        /**
+         * Set fullcalendar callback options
+         *
+         * @param array $callbacks
+         * @return $this 
+         * @static 
+         */
+        public static function setCallbacks($callbacks)
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::setCallbacks($callbacks);
+        }
+        
+        /**
+         * Get the callbacks currently defined
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getCallbacks()
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::getCallbacks();
+        }
+        
+        /**
+         * Get options+events JSON
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getOptionsJson()
+        {
+            return \MaddHatter\LaravelFullcalendar\Calendar::getOptionsJson();
+        }
+        
+    }         
+}
+    
     
 namespace {
 
@@ -13602,6 +13814,10 @@ namespace {
             return \Illuminate\Database\Query\Builder::macroCall($method, $parameters);
         }
         }
+    
+    class Image extends \Intervention\Image\Facades\Image {}
+    
+    class Calendar extends \MaddHatter\LaravelFullcalendar\Facades\Calendar {}
     
 }
 

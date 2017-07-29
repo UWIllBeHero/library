@@ -26,9 +26,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Article wherePreview($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Article whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\Anniversary $anniversary
  */
 class Article extends Model
 {
+    //
+    public function anniversary(){
+        return $this->hasOne(Anniversary::class);
+    }
     //
     public function photos(){
         return $this->hasMany(Photo::class);

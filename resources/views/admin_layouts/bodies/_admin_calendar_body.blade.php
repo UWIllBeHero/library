@@ -4,6 +4,9 @@
         <div class="col-md-2">
             @include('admin_layouts.partials._admin_navigation')
         </div>
-            @include('admin_layouts.objects._admin_index_articles')
+        <div class="col-md-10">
+            <a role="button" class="button-red" href="/admin/calendar/create">New...</a>
+            @include('admin_layouts.objects._calendar')
+        </div>
     </div>
 </div>

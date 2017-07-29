@@ -13,27 +13,28 @@
 
 
 //
+use MaddHatter\LaravelFullcalendar\Calendar;
+
 Route::get('/','ArticlesController@index');
 //
 Route::get('/articles/{article}','ArticlesController@single_article');
 //
 Route::get('/about_us', function (){
-    return view('about_us');
+    $article = \App\Article::first();
+    $books = \App\Book::get_fresh_books();
+    return view('about_us')->with('article', $article)->with('books', $books);
 });
 //
-Route::get('/catalog', function (){
-    return view('catalog');
-});
+Route::get('/catalog', 'BooksController@index');
 //
-Route::get('/gallery', function (){
-    return view('gallery');
-});
+Route::get('/gallery', 'GalleryController@index');
 //
-Route::get('/anniversaries', function (){
-    return view('anniversaries');
-});
+Route::get('/calendar', 'CalendarController@index');
 //
 Route::get('/admin', function (){
     return view('admin_layouts.ad_min_index');
 });
 //
+Route::resource('/admin/calendar', 'CalendarController');
+//
+Route::post('/admin/calendar', 'CalendarController@show');
